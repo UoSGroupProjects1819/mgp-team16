@@ -1,0 +1,4 @@
+sceneSetups:
+- path: E:/Uni/Unity/G16 Roguelike/Assets/Scenes/SampleScene.unity
+  isLoaded: 1
+  isActive: 1
