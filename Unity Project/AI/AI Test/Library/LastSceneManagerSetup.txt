@@ -1,4 +1,4 @@
 sceneSetups:
-- path: E:/Uni/Unity/G16 Roguelike/Assets/Scenes/SampleScene.unity
+- path: Assets/AI Types.unity
   isLoaded: 1
   isActive: 1
