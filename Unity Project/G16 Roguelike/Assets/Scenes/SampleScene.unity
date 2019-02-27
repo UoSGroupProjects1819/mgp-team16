@@ -600,7 +600,7 @@ MonoBehaviour:
   knockBack: 1000
   damageKnockBack: 750
   rotationSpeed: 100
-  reloadSpeed: 1
+  reloadSpeed: 0.5
   invincibleTime: 1
   health: 3
   canShoot: 1
@@ -772,9 +772,8 @@ MonoBehaviour:
   numberOfRooms: 10
   gap: 10
   clusterAmount: 1
-  roomObj: {fileID: 7253698094462114579, guid: 4cbada1abaf315e4987e5dbe330f4b76, type: 3}
   takenRooms: []
-  recurseNum: 0
+  roomObj: {fileID: 7253698094462114579, guid: 4cbada1abaf315e4987e5dbe330f4b76, type: 3}
 --- !u!4 &1802557610
 Transform:
   m_ObjectHideFlags: 0
