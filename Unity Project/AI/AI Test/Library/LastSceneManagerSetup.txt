@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/AI Types.unity
-  isLoaded: 1
-  isActive: 1
