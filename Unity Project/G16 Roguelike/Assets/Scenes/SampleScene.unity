@@ -555,10 +555,7 @@ MonoBehaviour:
   takenRooms: []
   roomObj: {fileID: 7253698094462114579, guid: 4cbada1abaf315e4987e5dbe330f4b76, type: 3}
   roomTypes:
-  - {fileID: 6528268734992356655, guid: cc05f76753d05b847ba90c288fac4561, type: 3}
-  - {fileID: 6528268734992356655, guid: c86db46efab71184a8800955489ad980, type: 3}
-  - {fileID: 6528268734992356655, guid: c54fff8d4215123478a842ed13af225a, type: 3}
-  - {fileID: 6528268734992356655, guid: fa160dd82cbeed2469d83b6896c83495, type: 3}
+  - {fileID: 6528268734992356655, guid: 7a7a6b189ee3ef749b23bbdaf42d0f54, type: 3}
 --- !u!4 &1802557610
 Transform:
   m_ObjectHideFlags: 0
@@ -748,7 +745,7 @@ PrefabInstance:
     - target: {fileID: 2703940948894143222, guid: 5c9ca596f317e0949b4382f2e93f72be,
         type: 3}
       propertyPath: roomTypes.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2703940948894143222, guid: 5c9ca596f317e0949b4382f2e93f72be,
         type: 3}
