@@ -556,6 +556,10 @@ MonoBehaviour:
   roomObj: {fileID: 7253698094462114579, guid: 4cbada1abaf315e4987e5dbe330f4b76, type: 3}
   roomTypes:
   - {fileID: 6528268734992356655, guid: 7a7a6b189ee3ef749b23bbdaf42d0f54, type: 3}
+  - {fileID: 6528268734992356655, guid: f1a3d6c5fbb11ff42a42c6d69b1bc249, type: 3}
+  - {fileID: 6528268734992356655, guid: 01b91294072c475419bd2fecd87fb27f, type: 3}
+  - {fileID: 6528268734992356655, guid: f89ab3e1df0f89843a1d56f21124e1ef, type: 3}
+  - {fileID: 6528268734992356655, guid: 0e0d3309522936d468f76ea6cbcc558f, type: 3}
 --- !u!4 &1802557610
 Transform:
   m_ObjectHideFlags: 0
@@ -745,7 +749,7 @@ PrefabInstance:
     - target: {fileID: 2703940948894143222, guid: 5c9ca596f317e0949b4382f2e93f72be,
         type: 3}
       propertyPath: roomTypes.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2703940948894143222, guid: 5c9ca596f317e0949b4382f2e93f72be,
         type: 3}
