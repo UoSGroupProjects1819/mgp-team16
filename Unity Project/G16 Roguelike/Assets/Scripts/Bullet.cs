@@ -25,5 +25,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.transform.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().StartCoroutine("Damage",1);
+            Destroy(gameObject);
+        }
     }
 }

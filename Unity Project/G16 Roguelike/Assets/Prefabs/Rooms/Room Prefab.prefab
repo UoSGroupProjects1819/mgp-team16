@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6698149211668160313}
   - component: {fileID: 8699417193679336225}
   - component: {fileID: 261251892137146998}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Room Prefab
   m_TagString: Room
   m_Icon: {fileID: 0}

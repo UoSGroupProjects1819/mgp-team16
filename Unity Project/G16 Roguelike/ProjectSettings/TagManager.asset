@@ -8,6 +8,7 @@ TagManager:
   - Spikes
   - Pit
   - Room
+  - Enemy
   layers:
   - Default
   - TransparentFX

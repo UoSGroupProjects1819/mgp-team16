@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour
     public int health;
     public bool canShoot;
     public bool invincible;
+    public GameObject sprite;
     Quaternion lookQuaternion;
     bool minus;
 
@@ -27,7 +28,7 @@ public class PlayerScript : MonoBehaviour
     public Camera cam;
     public GameObject bulletPrefab;
 
-    //Gun Effect Variables
+    [Header("Gun Effects")]
     public Transform MuzzleFlashPrefab;
     public Transform Gun;
 
@@ -105,18 +106,34 @@ public class PlayerScript : MonoBehaviour
                 invincible = true;
                 health -= 1;
                 rB.AddForce(-dir * damageKnockBack);
+                StartCoroutine("Flash");
                 yield return new WaitForSeconds(invincibleTime);
                 invincible = false;
             }
         }
     }
 
+    IEnumerator Flash()
+    {
+        sprite.GetComponent<SpriteRenderer>().color = new Color(1,0,0,1);
+        yield return new WaitForSeconds(invincibleTime / 5);
+        sprite.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        yield return new WaitForSeconds(invincibleTime / 5);
+        sprite.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        yield return new WaitForSeconds(invincibleTime / 5);
+        sprite.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        yield return new WaitForSeconds(invincibleTime / 5);
+        sprite.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        yield return new WaitForSeconds(invincibleTime / 5);
+        sprite.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+    }
+
     void Effect()
     {
-        Transform clone = Instantiate(MuzzleFlashPrefab, Gun.position, Gun.rotation) as Transform;
-        clone.parent = Gun;
-        float size = Random.Range(0.5f, 1f);
-        clone.localScale = new Vector3(1, 1, 1);
-        Destroy(clone.gameObject, 0.05f);
+        //Transform clone = Instantiate(MuzzleFlashPrefab, Gun.position, Gun.rotation) as Transform;
+        //clone.parent = Gun;
+        //float size = Random.Range(0.5f, 1f);
+        //clone.localScale = new Vector3(1, 1, 1);
+        //Destroy(clone.gameObject, 0.05f);
     }
 }
