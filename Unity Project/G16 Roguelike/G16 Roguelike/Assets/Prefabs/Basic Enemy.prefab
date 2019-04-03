@@ -95,9 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d50f483e24646049934eb6524a569b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 5
   invincible: 0
-  invincibleTime: 0.2
+  invincibleTime: 0
 --- !u!114 &5357562782490133121
 MonoBehaviour:
   m_ObjectHideFlags: 0

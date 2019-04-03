@@ -19,6 +19,9 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator Damage(int value)
     {
+        health -= value;
+        return null;
+        /*
         if (!invincible)
         {
             health -= value;
@@ -26,5 +29,6 @@ public class EnemyHealth : MonoBehaviour
             yield return new WaitForSeconds(invincibleTime);
             invincible = false;
         }
+        */
     }
 }

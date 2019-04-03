@@ -313,7 +313,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 4633420054817629328, guid: 131bbe750f111334893e3e5c95486944,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4633420054817629328, guid: 131bbe750f111334893e3e5c95486944,
         type: 3}
@@ -480,20 +480,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   knockBack: 1250
-  damageKnockBack: 750
+  damageKnockBack: 2000
   rotationSpeed: 100
   reloadSpeed: 0.5
   invincibleTime: 1
   bulletCount: 4
-  bulletSpread: 2
+  bulletSpread: 3
   health: 3
   canShoot: 1
   invincible: 0
-  sprite: {fileID: 79127870}
+  pos: {x: 0, y: 0}
   rB: {fileID: 1336487600}
   cam: {fileID: 519420031}
   bulletPrefab: {fileID: 6385443168926587016, guid: 0dfa7817e35afe543b9f15bc00ddc879,
     type: 3}
+  sprite: {fileID: 79127870}
   MuzzleFlashPrefab: {fileID: 991762336}
   Gun: {fileID: 410988724}
 --- !u!4 &1336487599
@@ -546,7 +547,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05947876, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -633,6 +634,10 @@ MonoBehaviour:
   - {fileID: 6528268734992356655, guid: 01b91294072c475419bd2fecd87fb27f, type: 3}
   - {fileID: 6528268734992356655, guid: f89ab3e1df0f89843a1d56f21124e1ef, type: 3}
   - {fileID: 6528268734992356655, guid: 0e0d3309522936d468f76ea6cbcc558f, type: 3}
+  endRoomObj: {fileID: 6528268734992356655, guid: 96a9542f804456842b3d53ff49cf519b,
+    type: 3}
+  startRoomObj: {fileID: 6528268734992356655, guid: 1215fe5274a464b42be56b27e4bb8b8b,
+    type: 3}
 --- !u!4 &1802557610
 Transform:
   m_ObjectHideFlags: 0

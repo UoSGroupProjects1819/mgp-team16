@@ -19,6 +19,8 @@ public class Generator : MonoBehaviour
     public GameObject roomObj;
     public GameObject[,] rooms;
     public GameObject[] roomTypes;
+    public GameObject endRoomObj;
+    public GameObject startRoomObj;
 
     int recurseNum;
 
@@ -37,7 +39,7 @@ public class Generator : MonoBehaviour
         }
 
         //Create room and move player
-        FillRoom(new Vector2(Mathf.RoundToInt(width / 2), Mathf.RoundToInt(width / 2)));
+        FillRoomStart(new Vector2(Mathf.RoundToInt(width / 2), Mathf.RoundToInt(width / 2)));
         GameObject.Find("Player").transform.position = new Vector2(Mathf.RoundToInt(width / 2) * gap, Mathf.RoundToInt(width / 2) * gap);
         GameObject.Find("Main Camera").transform.position = new Vector2(Mathf.RoundToInt(width / 2) * gap, Mathf.RoundToInt(width / 2) * gap);
 
@@ -69,6 +71,24 @@ public class Generator : MonoBehaviour
         takenRooms.Add(rooms[x, y]);
     }
 
+    void FillRoomEnd(Vector2 pos)
+    {
+        int x = Mathf.RoundToInt(pos.x);
+        int y = Mathf.RoundToInt(pos.y);
+        rooms[x, y].GetComponent<Room>().endRoom = true;
+        rooms[x, y].GetComponent<Room>().taken = true;
+        takenRooms.Add(rooms[x, y]);
+    }
+
+    void FillRoomStart(Vector2 pos)
+    {
+        int x = Mathf.RoundToInt(pos.x);
+        int y = Mathf.RoundToInt(pos.y);
+        rooms[x, y].GetComponent<Room>().startRoom = true;
+        rooms[x, y].GetComponent<Room>().taken = true;
+        takenRooms.Add(rooms[x, y]);
+    }
+
     public bool IsRoom(Vector2 pos)
     {
         int x = Mathf.RoundToInt(pos.x);
@@ -94,12 +114,23 @@ public class Generator : MonoBehaviour
     void CreateDungeon()
     {
         recurseNum = 0;
+        bool endRoom = false;
 
         while (recurseNum < numberOfRooms) {
+            print(recurseNum);
+
+            if(recurseNum == numberOfRooms/2)
+            {
+                endRoom = true;
+            }
+            else
+            {
+                endRoom = false;
+            }
 
             if(recurseNum > (numberOfRooms - (numberOfRooms/3)) )
             {
-                //clusterAmount = 3;
+                clusterAmount = 3;
             }
 
             for (int x = 0; x < takenRooms.Count; x++)
@@ -122,6 +153,13 @@ public class Generator : MonoBehaviour
 
                     if (tempRoom.lockedNum <= clusterAmount)
                     {
+                        if (endRoom)
+                        {
+                            FillRoomEnd(tempRoom.pos);
+                            print("CREATED ROOM AT" + tempRoom.GetComponent<Room>().GetDir(randInt2));
+                            recurseNum++;
+                        }
+
                         FillRoom(tempRoom.pos);
                         print("CREATED ROOM AT" + tempRoom.GetComponent<Room>().GetDir(randInt2));
                         recurseNum++;

@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 
     public float speed;
     public float addRot;
+    public bool collided;
 
     void Start()
     {
@@ -25,8 +26,9 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (other.transform.tag == "Enemy")
+        if (other.transform.tag == "Enemy" && !collided)
         {
+            collided = true;
             other.gameObject.GetComponent<EnemyHealth>().StartCoroutine("Damage",1);
             Destroy(gameObject);
         }

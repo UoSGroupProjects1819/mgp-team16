@@ -13,10 +13,13 @@ public class Room : MonoBehaviour
     public int lockedNum;
 
     public bool spawnedRoom;
+    public bool endRoom;
+    public bool startRoom;
 
     void Start()
     {
         gen = GameObject.Find("Generator").GetComponent<Generator>();
+        Invoke("LockDoors", 2);
     }
 
     void Update()
@@ -40,15 +43,25 @@ public class Room : MonoBehaviour
 
         if (taken && !spawnedRoom)
         {
-            //transform.GetChild(0).gameObject.SetActive(true);
-            int randInt = Random.Range(0, gen.roomTypes.Length);
-            GameObject tempRoom = Instantiate(gen.roomTypes[randInt], transform.position, Quaternion.identity);
-            tempRoom.transform.parent = gameObject.transform;
-            spawnedRoom = true;
-        }
-        else
-        {
-            //transform.GetChild(0).gameObject.SetActive(false);
+            if (endRoom){
+                
+                GameObject tempRoom = Instantiate(gen.endRoomObj, transform.position, Quaternion.identity);
+                tempRoom.transform.parent = gameObject.transform;
+                spawnedRoom = true;
+            }
+            else if(startRoom)
+            {
+                GameObject tempRoom = Instantiate(gen.startRoomObj, transform.position, Quaternion.identity);
+                tempRoom.transform.parent = gameObject.transform;
+                spawnedRoom = true;
+            }
+            else
+            {
+                int randInt = Random.Range(0, gen.roomTypes.Length);
+                GameObject tempRoom = Instantiate(gen.roomTypes[randInt], transform.position, Quaternion.identity);
+                tempRoom.transform.parent = gameObject.transform;
+                spawnedRoom = true;
+            }
         }
     }
 
@@ -114,8 +127,41 @@ public class Room : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        //set player pos
+        if(collision.tag == "Player")
+        {
+            collision.GetComponent<PlayerScript>().pos = pos;
+        }
+    }
+
+    void LockDoors()
+    {
+        if (!lockedTop && spawnedRoom)
+        {
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+        }
+        if (!lockedBottom && spawnedRoom)
+        {
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(3).gameObject.SetActive(true);
+        }
+        if (!lockedLeft && spawnedRoom)
+        {
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject.SetActive(false);
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(5).gameObject.SetActive(true);
+        }
+        if (!lockedRight && spawnedRoom)
+        {
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(6).gameObject.SetActive(false);
+            transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(7).gameObject.SetActive(true);
+        }
+
+        if(transform.childCount == 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

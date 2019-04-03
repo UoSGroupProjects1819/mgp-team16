@@ -12,8 +12,6 @@ public class PlayerVisual : MonoBehaviour
     {
         transform.position = playerObj.transform.position + offset;
 
-        print(playerObj.transform.rotation.z);
-
         if (playerObj.transform.rotation.z >= -1 && playerObj.transform.rotation.z < -0.85f)
         {
             GetComponent<SpriteRenderer>().sprite = spriteList[7];
