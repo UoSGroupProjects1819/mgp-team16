@@ -638,6 +638,13 @@ MonoBehaviour:
   - {fileID: 6528268734992356655, guid: 39ece6405123a6a41a32eb870cd6a9b6, type: 3}
   - {fileID: 6528268734992356655, guid: b20e384bfeebdfb478b69009fd28571c, type: 3}
   - {fileID: 6528268734992356655, guid: 706a8c0f5307ac7499a754cea5c16d97, type: 3}
+  - {fileID: 6528268734992356655, guid: 60edd2f01c1b48d48a5168e89cd329af, type: 3}
+  - {fileID: 6528268734992356655, guid: d7cc51b6a33c2534ca6152a66d72171e, type: 3}
+  - {fileID: 6528268734992356655, guid: fca6585ca3d379b43a408708d0d11684, type: 3}
+  - {fileID: 6528268734992356655, guid: dff5e5bee91ea1f41aac7e324443e839, type: 3}
+  - {fileID: 6528268734992356655, guid: acf3002e8820512468b474ee46bcd305, type: 3}
+  - {fileID: 6528268734992356655, guid: e64b0a2c7fcb3ae43a24a1d89dbe0a87, type: 3}
+  - {fileID: 6528268734992356655, guid: ad6ea88f6a4790145814c90c246c55a1, type: 3}
   endRoomObj: {fileID: 6528268734992356655, guid: 96a9542f804456842b3d53ff49cf519b,
     type: 3}
   startRoomObj: {fileID: 6528268734992356655, guid: 1215fe5274a464b42be56b27e4bb8b8b,
@@ -821,7 +828,7 @@ PrefabInstance:
     - target: {fileID: 2703940948894143222, guid: 5c9ca596f317e0949b4382f2e93f72be,
         type: 3}
       propertyPath: roomTypes.Array.size
-      value: 9
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2703940948894143222, guid: 5c9ca596f317e0949b4382f2e93f72be,
         type: 3}
